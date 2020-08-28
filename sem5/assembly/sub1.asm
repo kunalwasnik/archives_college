@@ -4,11 +4,9 @@
 .model small
 .stack
 .data
-a db 04h;
-
-
 .code
 start:
+a db 04h;
 mov ax, @data ; initalizing data segment
 mov ds,ax
 mov al,a ; direct addressing.
