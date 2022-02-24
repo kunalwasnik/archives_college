@@ -1,5 +1,5 @@
 
-#compiler experiments
+# Compiler experiments
 1. Write a program to count number of characters ,words, sentences, lines, tabs,
 numbers and blank spaces present in input using LEX
 
