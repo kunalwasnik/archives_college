@@ -1,0 +1,4 @@
+lex token.l
+yacc grammar.y
+
+gcc lex.yy.c y.tab.c -ll -ly

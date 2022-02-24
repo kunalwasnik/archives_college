@@ -1,0 +1,104 @@
+#include <stdio.h>
+#include <string.h>
+#include <regex.h>
+
+int main ( ) {
+
+
+   FILE *fp;
+   int flag=0,oflag=0, return_value=0;
+   regex_t regex;
+
+   char word[50];
+   char c[50] = "void";
+   char keywords[100][20]={"int" , "main" , "void" , "char" , "float" , "if" , "else" , "switch" 
+                              , "for" , "while" , "do" , "printf"};
+
+   char operators[100][20]={"+" , "-" , "/" , "*" };
+
+   char special[100][20]={"(" , ")" , "[" , "]" , ";" , "#" };
+
+   fp = fopen("program.c","r");
+
+   while(1) {
+      fscanf(fp, "%s", word); 
+
+      if( feof(fp) ) { 
+         break ;
+      }
+      //printf("%s\n", word);
+      
+             // strcpy(c, keywords[2]);
+               //printf("'%s' '%s'\n", c , word);
+
+             //printf("'%s'\n",word);
+
+      // keywords
+
+      for(int i=0;i<=11;i++){
+            
+      
+             if(strcmp(word , keywords[i])==0){
+
+                  printf("Keywords   : \t%s \n" ,word );
+             }
+      }
+
+
+      //operators.
+            
+        for(int i=0;i<=3;i++){
+            
+                  // if(i==0 && oflag==0) printf("Operators \n");
+                  // oflag++;
+                   
+                  if(strcmp(word , operators[i])==0){
+
+                        printf("Operators  : \t%s \n" ,word );
+                   }
+            }
+
+
+
+        for(int i=0;i<=5;i++){
+            
+                  // if(i==0 && oflag==0) printf("Operators \n");
+                  // oflag++;
+                   
+                  if(strcmp(word , special[i])==0){
+
+                        printf("SpecialChar: \t%s \n" ,word );
+                   }
+            }
+
+            // identifier.
+            
+
+            return_value = regcomp(&regex,"[:lower:]",0);
+
+
+            if(return_value==0){
+
+                        // insert into linkedlist.
+                        //printf("identifier: \t%s \n" ,word );
+          }
+   
+
+
+   }
+
+
+
+
+
+
+
+   fclose(fp);
+   
+   return(0);
+
+
+
+
+}
+

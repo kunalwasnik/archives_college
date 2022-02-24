@@ -1,0 +1,5 @@
+lex wordcount.l
+gcc -lfl lex.yy.c
+
+lex token.l && yacc -d code-generate.y.y && gcc y.tab.c lex.yy.c  -ll -ly
+
